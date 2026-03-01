@@ -1,0 +1,87 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "How are you",
+        "Is anyone there?",
+        "Hello",
+        "Good day",
+        "What's up"
+      ],
+      "responses": [
+        "Hello! Welcome to our college chatbot.",
+        "Hi there! How can I help you today?",
+        "Greetings! What information are you looking for?"
+      ]
+    },
+    {
+      "tag": "admission",
+      "patterns": [
+        "How do I apply?",
+        "What is the admission procedure?",
+        "How can I get admission here?",
+        "Tell me about admissions",
+        "When do applications open?",
+        "What are the admission requirements?",
+        "Do you have a deadline for applications?"
+      ],
+      "responses": [
+        "Applications open Jan 15! Need: Transcripts, LOR, SOP.",
+        "You can apply online through our university portal. Applications usually open in January.",
+        "The admission process requires submitting an online application, previous transcripts, and a statement of purpose."
+      ]
+    },
+    {
+      "tag": "courses",
+      "patterns": [
+        "What courses do you offer?",
+        "List of majors",
+        "Which branches are available?",
+        "Tell me about the engineering programs",
+        "Do you offer computer science?",
+        "What degrees can I get here?"
+      ],
+      "responses": [
+        "We offer a variety of courses including Computer Science, Mechanical Engineering, Business Administration, and more.",
+        "You can check our full list of majors on the academics page of the university website.",
+        "Our most popular programs are CS, Data Science, and Artificial Intelligence."
+      ]
+    },
+    {
+      "tag": "fees",
+      "patterns": [
+        "What is the fee structure?",
+        "How much does it cost?",
+        "Tell me about the tuition fees",
+        "Is it expensive to study here?",
+        "What are the hostel fees?",
+        "Fee breakdown please"
+      ],
+      "responses": [
+        "The tuition fee varies by program. Generally, it is around $15,000 per semester. Scholarships are available.",
+        "For detailed fee structures, please visit the Financial Aid office or our website.",
+        "The estimated cost of attendance including tuition and hostel is $20,000 per semester."
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Bye",
+        "See you later",
+        "Goodbye",
+        "Thanks",
+        "Thank you",
+        "That's all",
+        "Have a good one"
+      ],
+      "responses": [
+        "Goodbye! Have a great day ahead.",
+        "You're welcome! Feel free to ask if you have more questions later.",
+        "See you! Best of luck with your college journey."
+      ]
+    }
+  ]
+}

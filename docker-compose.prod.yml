@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    container_name: chatbot-backend-prod
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=production
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 512M
+    networks:
+      - chatbot-prod-network
+
+  frontend:
+    image: nginx:alpine
+    container_name: chatbot-frontend-prod
+    ports:
+      - "80:80"
+    volumes:
+      - ./frontend:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - chatbot-prod-network
+
+networks:
+  chatbot-prod-network:
+    driver: bridge
