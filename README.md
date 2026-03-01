@@ -8,6 +8,10 @@ An end-to-end containerized NLP chatbot designed to assist users with college ad
 - **Cloud Compatible**: Optimized for deployment on Render and Docker Hub.
 - **Responsive UI**: Clean, animated chat interface.
 
+## 🔗 Live Project Links
+- **Chatbot Interface**: [https://college-chatbot-frontend-wy29.onrender.com/index.html](https://college-chatbot-frontend-wy29.onrender.com/index.html)
+- **Backend API**: [https://college-chatbot-9tao.onrender.com](https://college-chatbot-9tao.onrender.com)
+
 ## 🏗️ Architecture
 ```
 User Request
