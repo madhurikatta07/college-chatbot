@@ -2,7 +2,7 @@ const chatMessages = document.getElementById('chat-messages');
 const userInput = document.getElementById('user-input');
 const sendBtn = document.getElementById('send-btn');
 
-const API_URL = 'http://localhost:5000/chat';
+const API_URL = 'https://college-chatbot-9tao.onrender.com/chat';
 
 function scrollToBottom() {
     chatMessages.scrollTop = chatMessages.scrollHeight;
