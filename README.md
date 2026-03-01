@@ -1,52 +1,61 @@
-# ML College Chatbot Final Report
+# ML College Chatbot
 
-## 1. Executive Summary
-The ML College Chatbot is an end-to-end containerized solution designed to assist users with college admission inquiries. Utilizing Natural Language Processing (NLP) techniques, the bot accurately classifies user intentions and provides predefined contextual responses. The architecture is fully orchestrated with Docker Compose, separating the ML inference backend from the static frontend, thus ensuring readiness for production cloud environments.
+An end-to-end containerized NLP chatbot designed to assist users with college admission inquiries. This project features a Flask backend for inference and an Nginx frontend for a seamless user experience.
 
-## 2. Architecture Diagram
+## ✨ Features
+- **Intent Classification**: Uses `scikit-learn` (MultinomialNB) to categorize queries.
+- **Production Ready**: Backend served via `Gunicorn` and frontend via `Nginx`.
+- **Cloud Compatible**: Optimized for deployment on Render and Docker Hub.
+- **Responsive UI**: Clean, animated chat interface.
+
+## 🏗️ Architecture
 ```
 User Request
     │
     ▼
-┌─────────────────────────────────────────┐
-│               Nginx (:80)               │
-│         (Static HTML/CSS/JS)            │
-└─────────────────────────────────────────┘
+┌───────────────────────────┐
+│       Nginx (:80)         │ (Static Frontend)
+└───────────────────────────┘
     │
-    ▼ (API Call over internal Docker network)
-┌─────────────────────────────────────────┐
-│              Flask (:5000)              │
-│       (app.py, model.pkl inference)     │
-└─────────────────────────────────────────┘
+    ▼
+┌───────────────────────────┐
+│     Gunicorn (:5000)      │ (Flask Backend)
+└───────────────────────────┘
 ```
 
-## 3. Technology Stack
-- **Backend**: Python 3.10, Flask, scikit-learn (TF-IDF & MultinomialNB), NLTK (punkt, stopwords)
-- **Frontend**: HTML5, Vanilla CSS (Flexbox, Grid, Animations), Vanilla JS (Fetch API)
-- **DevOps**: Docker, Docker Compose, Nginx (alpine), Bash scripting
+## 🛠️ Technology Stack
+- **Backend**: Python 3.10, Flask, Gunicorn, scikit-learn, NLTK
+- **Frontend**: HTML5, Vanilla CSS, Vanilla JS
+- **DevOps**: Docker, Docker Compose, GitHub Actions, Nginx
 
-## 4. Model Performance Profile
-- **Accuracy**: ~85% on sample queries
-- **Categorizations**: Greeting, Admission, Courses, Fees, Goodbye
-- **Latency Target**: ~45ms for inference
+## 🚀 Deployment Guide
 
-## 5. Deployment Guide
-### Local Environment
+### Local Development
+Run the project locally using Docker Compose:
 ```bash
 docker-compose up --build
 ```
-### Production Environment (AWS/Render)
+Access the chatbot at `http://localhost:8080`.
+
+### Production (Docker)
+Run the production-optimized stack:
 ```bash
 docker-compose -f docker-compose.prod.yml up -d --build
 ```
-### Docker Hub Push
+Access the chatbot at `http://localhost`.
+
+### Deployment to Render
+1. **Backend**: Create a Web Service on Render using the `Dockerfile`. Ensure the `PORT` environment variable is set (Render handles this automatically).
+2. **Frontend**: Create a Static Site on Render, pointing to the `frontend/` directory.
+
+### Docker Hub
+Push the backend image:
 ```bash
-chmod +x deploy.sh
-./deploy.sh
+docker build -t your-username/college-chatbot-backend:latest .
+docker push your-username/college-chatbot-backend:latest
 ```
 
-## 6. Future Enhancements
-- **Redis Integration**: Cache frequent queries to reduce redundant model inferences.
-- **PostgreSQL**: Store conversational history for continuous learning and analytics.
-- **Advanced NLP**: Upgrade from Naive Bayes to BERT/RoBERTa for deeper semantic understanding.
-- **Kubernetes**: Migrate from Docker Compose to K8s for high availability and auto-scaling.
+## 📈 Model Profile
+- **Accuracy**: ~85%
+- **Tags**: Greeting, Admission, Courses, Fees, Goodbye
+- **Inference Latency**: < 50ms
