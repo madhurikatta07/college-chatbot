@@ -13,6 +13,9 @@ RUN python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords')"
 # Copy backend application code
 COPY backend/ /app/
 
+# Generate model.pkl from intents.json
+RUN python train_model.py
+
 EXPOSE 5000
 
 # Use gunicorn for production
