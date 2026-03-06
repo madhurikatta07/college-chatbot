@@ -9,7 +9,7 @@ An end-to-end containerized NLP chatbot designed to assist users with college ad
 - **Responsive UI**: Clean, animated chat interface.
 
 ## 🔗 Live Project Links
-- **Chatbot Interface**: [https://college-chatbot-frontend-wy29.onrender.com/index.html](https://college-chatbot-frontend-wy29.onrender.com/index.html)
+- **Chatbot Interface**: [https://college-chatbot-frontend-wy29.onrender.com/frontend/index.html](https://college-chatbot-frontend-wy29.onrender.com/frontend/index.html)
 - **Backend API**: [https://college-chatbot-9tao.onrender.com](https://college-chatbot-9tao.onrender.com)
 
 ## 🏗️ Architecture
